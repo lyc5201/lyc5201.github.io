@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>动态引导页面</title>
+<title>跳转页面</title>
 <style>
   body {
     margin: 0;
@@ -13,7 +13,7 @@
     align-items: center;
     height: 100vh;
     background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
   }
   .container {
     text-align: center;
@@ -26,30 +26,56 @@
     font-size: 1rem;
     color: #666;
   }
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  .loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+    margin: 50px auto;
   }
-  .animated {
-    animation: fadeIn 2s ease-in-out;
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  button:hover {
+    background-color: #45a049;
   }
 </style>
 </head>
 <body>
 
-<div class="container animated">
-  <h1>欢迎来到我的个人引导页</h1>
-  <p>这里将展示我的个人项目和技能。</p>
-  <!-- 你可以添加更多的内容，比如图片、链接等 -->
+<div class="container">
+  <h1>即将跳转...</h1>
+  <p>请稍候，您将被重定向到目标页面。</p>
+  <div class="loader"></div>
+  <button onclick="redirectToPage()">立即跳转</button>
 </div>
 
 <script>
-  // 你可以在这里添加JavaScript代码来实现更多的动态效果
-  // 例如，你可以在页面加载后一段时间显示欢迎消息
+  function redirectToPage() {
+    window.location.href = 'https://example.com'; // 替换为你想要跳转的URL
+  }
+
+  // 如果你不想让用户等待，可以直接在页面加载后跳转
   window.onload = function() {
-    setTimeout(function() {
-      alert('欢迎来到我的个人引导页！');
-    }, 3000);
+    setTimeout(redirectToPage, 3000); // 3秒后自动跳转
   };
 </script>
 
