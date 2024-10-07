@@ -1,7 +1,57 @@
-<html>
-<head><title>404 Not Found</title></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>动态引导页面</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+  }
+  .container {
+    text-align: center;
+  }
+  h1 {
+    font-size: 2rem;
+    color: #333;
+  }
+  p {
+    font-size: 1rem;
+    color: #666;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .animated {
+    animation: fadeIn 2s ease-in-out;
+  }
+</style>
+</head>
 <body>
-<center><h1>404 Not Found</h1></center>
-<hr><center>nginx</center>
+
+<div class="container animated">
+  <h1>欢迎来到我的个人引导页</h1>
+  <p>这里将展示我的个人项目和技能。</p>
+  <!-- 你可以添加更多的内容，比如图片、链接等 -->
+</div>
+
+<script>
+  // 你可以在这里添加JavaScript代码来实现更多的动态效果
+  // 例如，你可以在页面加载后一段时间显示欢迎消息
+  window.onload = function() {
+    setTimeout(function() {
+      alert('欢迎来到我的个人引导页！');
+    }, 3000);
+  };
+</script>
+
 </body>
 </html>
